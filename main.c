@@ -18,7 +18,7 @@ void* getAlgorithm(int type) {
         case BUBBLE:
             return bubbleSort;
         case QUICK:
-            //quickSort(table, size);
+            quickSortParametrized;
         default:
             return quickSortParametrized;
     }
