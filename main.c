@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<stdlib.h>
 #include<time.h>
 
 #include "sorting_commons.h"
@@ -8,7 +7,7 @@
 #define START 10
 #define STOP 10000000
 
-void* sortTable(int type) {
+void* getAlgorithm(int type) {
     switch (type) {
         case SELECT:
             return selectSort;
@@ -25,7 +24,7 @@ void* sortTable(int type) {
     }
 }
 
-int *getTable(int type, int size) {
+int *getTableOfTypeAndSize(int type, int size) {
     int *table = (int *) malloc(size * sizeof(int));
     switch (type) {
         case DECREASING:
@@ -55,6 +54,6 @@ double countTime(void (*func)(int*, int), int *table, int size) {
 }
 
 int main(void) {
-    printf("%f", countTime(sortTable(BUBBLE), getTable(DECREASING, 10000), 10000));
+    printf("%f", countTime(getAlgorithm(BUBBLE), getTableOfTypeAndSize(DECREASING, 10000), 10000));
     return 0;
 }
