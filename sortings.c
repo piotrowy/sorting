@@ -6,8 +6,6 @@ void swap(int *a, int *b) {
     *b = temp;
 }
 
-
-
 void combSort(int *table, int size)
 {
     int gap = size, temp, guard;
