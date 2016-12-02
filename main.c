@@ -54,6 +54,8 @@ double countTime(void (*func)(int*, int), int *table, int size) {
 }
 
 int main(void) {
-    printf("%f", countTime(getAlgorithm(BUBBLE), getTableOfTypeAndSize(DECREASING, 10000), 10000));
+    int size = 100000, *table = getTableOfTypeAndSize(DECREASING, size);
+    printf("%f", countTime(getAlgorithm(BUBBLE), table, size));
+    free(table);
     return 0;
 }
