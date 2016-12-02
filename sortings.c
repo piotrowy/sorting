@@ -46,7 +46,6 @@ void selectSort(int *table, int size) {
             swap(&table[j], &table[min]);
         }
     }
-
 }
 
 void bubbleSort(int *table, int size) {
