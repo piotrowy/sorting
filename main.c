@@ -7,7 +7,7 @@
 #define START 10
 #define STOP 10000000
 
-void* getAlgorithm(int type) {
+void* getSortingAlgorithm(int type) {
     switch (type) {
         case SELECT:
             return selectSort;
@@ -55,7 +55,7 @@ double countTime(void (*func)(int *, int), int *table, int size) {
 
 int main(void) {
     int size = 100000, *table = getTableOfTypeAndSize(DECREASING, size);
-    printf("%f", countTime(getAlgorithm(BUBBLE), table, size));
+    printf("%f", countTime(getSortingAlgorithm(BUBBLE), table, size));
     free(table);
     return 0;
 }
