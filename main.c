@@ -24,7 +24,7 @@ void* getAlgorithm(int type) {
     }
 }
 
-int *getTableOfTypeAndSize(int type, int size) {
+int* getTableOfTypeAndSize(int type, int size) {
     int *table = (int *) malloc(size * sizeof(int));
     switch (type) {
         case DECREASING:
@@ -42,7 +42,7 @@ int *getTableOfTypeAndSize(int type, int size) {
     return table;
 }
 
-double countTime(void (*func)(int*, int), int *table, int size) {
+double countTime(void (*func)(int *, int), int *table, int size) {
     double time;
     clock_t clk = clock();
     func(table, size);
