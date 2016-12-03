@@ -14,7 +14,10 @@ enum SortingType {
     INSERT,
     BUBBLE,
     COMB,
-    QUICK
+    QUICK,
+    QUICK_ITERATIVE,
+    MERGE,
+    HEAP
 };
 
 #endif //SORTING_H
