@@ -12,3 +12,13 @@ add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
 install(TARGETS ${PROJECT_NAME} DESTINATION lib/${PROJECT_NAME})
 
 install(FILES ${HEADERS} DESTINATION include/${PROJECT_NAME})
+
+
+bubble_sort
+comb_sort
+commons
+heap_sort
+insert_sort.h
+merge_sort.h
+quick_sort.h
+select_sort.h
