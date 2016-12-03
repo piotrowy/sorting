@@ -34,8 +34,8 @@ void fillDecreasing(int *table, int size) {
 int check(int *table, int size) {
     for (int i = 1; i < size; i++) {
         if (table[i] < table[i - 1]) {
-            return -1;
+            return 0;
         }
     }
-    return 0;
+    return 1;
 }

@@ -2,7 +2,7 @@
 #include<time.h>
 
 #include "sorting_commons.h"
-#include "sortings.h"
+#include "sorting/sorting.h"
 
 #define START 10
 #define STOP 10000000
@@ -18,9 +18,10 @@ void* getSortingAlgorithm(int type) {
         case BUBBLE:
             return bubbleSort;
         case QUICK:
-            quickSortParametrized;
+            return quickSortParametrized;
         default:
             return quickSortParametrized;
+
     }
 }
 
@@ -55,7 +56,7 @@ double countTime(void (*func)(int *, int), int *table, int size) {
 
 int main(void) {
     int size = 100000, *table = getTableOfTypeAndSize(DECREASING, size);
-    printf("%f", countTime(getSortingAlgorithm(BUBBLE), table, size));
+    printf("%f", countTime(getSortingAlgorithm(QUICK), table, size));
     free(table);
     return 0;
 }
