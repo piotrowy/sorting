@@ -1,13 +1,12 @@
 #include<stdio.h>
-#include<time.h>
 
-#include "sorting_commons.h"
-#include "sorting/sorting.h"
+#include "stats_util.h"
+#include "sorting_algorithms/inc/sorting.h"
 
 #define START 10
 #define STOP 10000000
 
-void* getSortingAlgorithm(int type) {
+fptr_sorting getSortingAlgorithm(int type) {
     switch (type) {
         case SELECT:
             return selectSort;
@@ -25,7 +24,7 @@ void* getSortingAlgorithm(int type) {
     }
 }
 
-int* getTableOfTypeAndSize(int type, int size) {
+int *getTableOfTypeAndSize(int type, int size) {
     int *table = (int *) malloc(size * sizeof(int));
     switch (type) {
         case DECREASING:
@@ -43,20 +42,14 @@ int* getTableOfTypeAndSize(int type, int size) {
     return table;
 }
 
-double countTime(void (*func)(int *, int), int *table, int size) {
-    double time;
-    clock_t clk = clock();
-    func(table, size);
-    time = (clock() - clk) * 1000 / (double) CLOCKS_PER_SEC;
-    if (check(table, size)) {
-        return time;
-    }
-    return -1.0;
+double getSortingStats(int sortingType, int tableType, int size) {
+    int *table = getTableOfTypeAndSize(tableType, size);
+    double time = countTime(getSortingAlgorithm(sortingType), table, size);
+    free(table);
+    return time;
 }
 
 int main(void) {
-    int size = 100000, *table = getTableOfTypeAndSize(DECREASING, size);
-    printf("%f", countTime(getSortingAlgorithm(QUICK), table, size));
-    free(table);
+    printf("%f", getSortingStats(BUBBLE, INCREASING, 100000));
     return 0;
 }

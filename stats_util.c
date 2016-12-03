@@ -1,4 +1,4 @@
-#include "sorting_commons.h"
+#include "stats_util.h"
 
 void fillTable(int *table, int size, int (*func)(int)) {
     table[0] = rand() % 100;
@@ -38,4 +38,15 @@ int check(int *table, int size) {
         }
     }
     return 1;
+}
+
+double countTime(fptr_sorting func, int *table, int size) {
+    double time;
+    clock_t clk = clock();
+    func(table, size);
+    time = (clock() - clk) * 1000 / (double) CLOCKS_PER_SEC;
+    if (check(table, size)) {
+        return time;
+    }
+    return -1.0;
 }

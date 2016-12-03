@@ -1,15 +1,10 @@
-#ifndef SORTING_COMMONS_H
-#define SORTING_COMMONS_H
+#ifndef STATS_UTIL_H
+#define STATS_UTIL_H
 
 #include <stdlib.h>
+#include <time.h>
 
-enum SortingType {
-    SELECT,
-    INSERT,
-    BUBBLE,
-    COMB,
-    QUICK
-};
+typedef void (*fptr_sorting)(int *table, int size);
 
 enum TableType {
     DECREASING,
@@ -25,4 +20,6 @@ void fillDecreasing(int *table, int size);
 
 int check(int *table, int size);
 
-#endif /* SORTING_COMMONS_H */
+double countTime(fptr_sorting func, int *table, int size);
+
+#endif /* STATS_UTIL_H */

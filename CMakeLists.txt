@@ -1,5 +1,13 @@
 cmake_minimum_required(VERSION 3.6)
-project(sorting)
+set(PROJECT_NAME piotrowy_sorting_stats)
+project(${PROJECT_NAME})
 
-set(SOURCE_FILES main.c sorting_commons.h sorting_commons.c sorting/sorting.h)
-add_executable(sorting ${SOURCE_FILES})
+file(GLOB SOURCE_FILES *.c *.h)
+
+add_subdirectory(sorting_algorithms)
+
+add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+
+target_link_libraries(${PROJECT_NAME} piotrowy_sorting)
+
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
