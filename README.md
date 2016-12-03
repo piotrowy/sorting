@@ -3,6 +3,15 @@ Sorting project serves to make measurments of different sorting algorithms. It c
 
 You can use this project, see implementation of various sorting algorithms and measure time of executing such algorithm.
 
+#Algorithms:
+* HeapSort (in progress)
+* QuickSort (in progress)
+* MergeSort (in progress)
+* SelectSort
+* InsertSort
+* CombSort
+* BubbleSort
+
 #How to use?
 * in main.c file I defined two functions which map enums to functions. It allows to easy configure main function and what you want to measure.
 * sorting_algorithms directory contains only implementations of sorting algorithms and other functions (like swap) which were necessary to implement sorting. It contains also enum with all implemented alogrithms names.
@@ -12,3 +21,6 @@ You can use this project, see implementation of various sorting algorithms and m
 Possible ways (it means provided by me or already existings tools):
 * Preferable way - use Clion it's the best.
 * CMake - yes, there are already defined files. 
+
+#Future works
+I work on implementation of setting timeouts on executed algorithms.
