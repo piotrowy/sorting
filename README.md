@@ -6,6 +6,7 @@ You can use this project, see implementation of various sorting algorithms and m
 #Algorithms:
 * HeapSort (in progress)
 * QuickSort (in progress)
+* QuickSort Iterative
 * MergeSort (in progress)
 * SelectSort
 * InsertSort
