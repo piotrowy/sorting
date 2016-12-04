@@ -3,7 +3,7 @@ Sorting project serves to make measurements of different sorting algorithms. It 
 
 You can use this project, see implementation of various sorting algorithms and measure time of executing such algorithm.
 
-#Algorithms:
+#Algorithms
 * HeapSort (in progress)
 * QuickSort
 * QuickSort Iterative
@@ -12,6 +12,7 @@ You can use this project, see implementation of various sorting algorithms and m
 * InsertSort
 * CombSort
 * BubbleSort
+* ShellSort
 
 Iterative quick sort contains dummy stack implementation. It is needed and I want only show how iterative quick sort works, not a stack. Stack is not resistant to overflowing integer.
 

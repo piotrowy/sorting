@@ -18,6 +18,10 @@ fptr_sorting getSortingAlgorithm(int type) {
             return quickSortParametrized;
         case QUICK_ITERATIVE:
             return quickSortIterativeParametrized;
+        case HEAP:
+            return heapSort;
+        case MERGE:
+            return mergeSort;
         default:
             return quickSortParametrized;
 
