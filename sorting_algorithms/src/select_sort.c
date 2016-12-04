@@ -1,4 +1,3 @@
-#include "../inc/select_sort.h"
 #include "../inc/commons.h"
 
 void selectSort(int *table, int size) {

@@ -1,5 +1,5 @@
-#ifndef STATS_UTIL_H
-#define STATS_UTIL_H
+#ifndef PIOTROWY_STATS_UTIL_H
+#define PIOTROWY_STATS_UTIL_H
 
 #include <stdlib.h>
 #include <time.h>
@@ -22,4 +22,4 @@ int check(int *table, int size);
 
 double countTime(fptr_sorting func, int *table, int size);
 
-#endif /* STATS_UTIL_H */
+#endif //PIOTROWY_STATS_UTIL_H

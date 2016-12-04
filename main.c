@@ -22,6 +22,8 @@ fptr_sorting getSortingAlgorithm(int type) {
             return heapSort;
         case MERGE:
             return mergeSort;
+        case SHELL:
+            return shellSort;
         default:
             return quickSortParametrized;
 
@@ -58,6 +60,6 @@ void runWithTimeout() {
 }
 
 int main(void) {
-    printf("%f\n", getSortingStats(QUICK, INCREASING, 10000000));
+    printf("%f\n", getSortingStats(SHELL, INCREASING, 100000));
     return 0;
 }

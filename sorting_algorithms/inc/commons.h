@@ -1,5 +1,5 @@
-#ifndef SORTING_COMMONS_H
-#define SORTING_COMMONS_H
+#ifndef PIOTROWY_SORTING_COMMONS_H
+#define PIOTROWY_SORTING_COMMONS_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -30,4 +30,4 @@ int pop(Stack *stack);
 
 int isEmpty(Stack *stack);
 
-#endif //SORTING_COMMONS_H
+#endif //PIOTROWY_SORTING_COMMONS_H

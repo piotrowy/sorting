@@ -1,6 +1,6 @@
-#ifndef SORTING_HEAP_SORT_H
-#define SORTING_HEAP_SORT_H
+#ifndef PIOTROWY_SORTING_HEAP_SORT_H
+#define PIOTROWY_SORTING_HEAP_SORT_H
 
 void heapSort(int *table, int size);
 
-#endif //SORTING_HEAP_SORT_H
+#endif //PIOTROWY_SORTING_HEAP_SORT_H
