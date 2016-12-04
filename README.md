@@ -7,12 +7,12 @@ You can use this project, see implementation of various sorting algorithms and m
 * HeapSort (in progress)
 * QuickSort
 * QuickSort Iterative
-* MergeSort (in progress)
+* MergeSort
 * SelectSort
 * InsertSort
 * CombSort
 * BubbleSort
-* ShellSort
+* ShellSort (in progress)
 
 Iterative quick sort contains dummy stack implementation. It is needed and I want only show how iterative quick sort works, not a stack. Stack is not resistant to overflowing integer.
 
