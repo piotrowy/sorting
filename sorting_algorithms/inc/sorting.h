@@ -1,6 +1,7 @@
 #ifndef SORTING_H
 #define SORTING_H
 
+#include "commons.h"
 #include "quick_sort.h"
 #include "select_sort.h"
 #include "comb_sort.h"

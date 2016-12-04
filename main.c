@@ -1,5 +1,3 @@
-#include<stdio.h>
-
 #include "stats_util.h"
 #include "sorting_algorithms/inc/sorting.h"
 
@@ -18,13 +16,15 @@ fptr_sorting getSortingAlgorithm(int type) {
             return bubbleSort;
         case QUICK:
             return quickSortParametrized;
+        case QUICK_ITERATIVE:
+            return quickSortIterativeParametrized;
         default:
             return quickSortParametrized;
 
     }
 }
 
-int *getTableOfTypeAndSize(int type, int size) {
+int* getTableOfTypeAndSize(int type, int size) {
     int *table = (int *) malloc(size * sizeof(int));
     switch (type) {
         case DECREASING:
@@ -49,7 +49,11 @@ double getSortingStats(int sortingType, int tableType, int size) {
     return time;
 }
 
+void runWithTimeout() {
+
+}
+
 int main(void) {
-    printf("%f", getSortingStats(BUBBLE, INCREASING, 100000));
+    printf("%f\n", getSortingStats(QUICK, INCREASING, 10000000));
     return 0;
 }
