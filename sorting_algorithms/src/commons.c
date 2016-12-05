@@ -45,9 +45,9 @@ void push(Stack *stack, int elem) {
     }
 }
 
-void forcePush(Stack *stack, int elem) {
-    if ((stack->position + 1) >= stack->maxSize) {
-        changeSize(stack, stack->maxSize);
+void forcePush(Stack *stack, int newSize, int elem) {
+    if ((stack->position + 1) > stack->maxSize) {
+        changeSize(stack, newSize);
     }
     stack->position += 1;
     stack->table[stack->position] = elem;
