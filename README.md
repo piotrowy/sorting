@@ -27,4 +27,4 @@ Possible ways (it means provided by me or already existing tool):
 * CMake - yes, there are already defined files. 
 
 #Extras
-I implemented setting timeouts on algorithms execution.
+Program has implemented setting timeouts on algorithms execution.
