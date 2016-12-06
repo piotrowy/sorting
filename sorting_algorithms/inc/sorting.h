@@ -12,15 +12,15 @@
 #include "shell_sort.h"
 
 enum SortingType {
-    BUBBLE,
-    COMB,
-    HEAP,
-    INSERT,
-    MERGE,
-    QUICK,
-    QUICK_ITERATIVE,
-    SELECT,
-    SHELL
+    BUBBLE_SORT,
+    COMB_SORT,
+    HEAP_SORT,
+    INSERT_SORT,
+    MERGE_SORT,
+    QUICK_SORT,
+    QUICK_ITERATIVE_SORT,
+    SELECT_SORT,
+    SHELL_SORT
 };
 
 #endif //PIOTROWY_SORTING_H

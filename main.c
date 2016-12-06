@@ -6,23 +6,23 @@
 
 fptr_sorting getSortingAlgorithm(int type) {
     switch (type) {
-        case SELECT:
+        case SELECT_SORT:
             return selectSort;
-        case INSERT:
+        case INSERT_SORT:
             return insertSort;
-        case COMB:
+        case COMB_SORT:
             return combSort;
-        case BUBBLE:
+        case BUBBLE_SORT:
             return bubbleSort;
-        case QUICK:
+        case QUICK_SORT:
             return quickSortParametrized;
-        case QUICK_ITERATIVE:
+        case QUICK_ITERATIVE_SORT:
             return quickSortIterativeParametrized;
-        case HEAP:
+        case HEAP_SORT:
             return heapSort;
-        case MERGE:
+        case MERGE_SORT:
             return mergeSort;
-        case SHELL:
+        case SHELL_SORT:
             return shellSort;
         default:
             return quickSortParametrized;
@@ -60,6 +60,6 @@ void runWithTimeout() {
 }
 
 int main(void) {
-    printf("%f\n", getSortingStats(SHELL, INCREASING, 100000));
+    printf("%f\n", getSortingStats(SHELL_SORT, INCREASING, 100000));
     return 0;
 }
