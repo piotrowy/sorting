@@ -22,7 +22,7 @@ Iterative quick sort contains dummy stack implementation. It is needed and I wan
 * stats_utils.h is an interface which provides functions to fill arrays with values (there are 3 modes: RANDOM, INCREASING and DECREASING), to check if array is sorted and to measure time of sorting.
 
 #Build
-Possible ways (it means provided by me or already existing tool):
+Possible ways (it means provided by author or already existing tool):
 * Preferable way - use Clion it's the best.
 * CMake - yes, there are already defined files. 
 
