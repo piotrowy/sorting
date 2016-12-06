@@ -26,5 +26,5 @@ Possible ways (it means provided by me or already existing tool):
 * Preferable way - use Clion it's the best.
 * CMake - yes, there are already defined files. 
 
-#Future works
-I work on implementation of setting timeouts on algorithms execution.
+#Extras
+I implemented setting timeouts on algorithms execution.
