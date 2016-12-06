@@ -1,4 +1,5 @@
-#include "sorting.h"
+#include <stdlib.h>
+#include "../inc/merge_sort.h"
 
 void merge(int *table, int left, int pivot, int right, int *helpTable) {
     int l1, l2, i;

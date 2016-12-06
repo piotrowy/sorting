@@ -18,9 +18,23 @@ enum SortingType {
     INSERT_SORT,
     MERGE_SORT,
     QUICK_SORT,
-    QUICK_ITERATIVE_SORT,
+    QUICK_SORT_ITERATIVE,
     SELECT_SORT,
     SHELL_SORT
 };
+
+const char* SORTING_TYPES[] = {"BUBBLE_SORT",
+                              "COMB_SORT",
+                              "HEAP_SORT",
+                              "INSERT_SORT",
+                              "MERGE_SORT",
+                              "QUICK_SORT",
+                              "QUICK_SORT_ITERATIVE",
+                              "SELECT_SORT",
+                              "SHELL_SORT"};
+
+typedef void (*fptr_sorting)(int *table, int size);
+
+fptr_sorting getSortingAlgorithm(int type);
 
 #endif //PIOTROWY_SORTING_H

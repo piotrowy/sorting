@@ -1,4 +1,4 @@
-#include "../inc/sorting.h"
+#include "../inc/shell_sort.h"
 
 void shellSortPhase(int *table, int size, int gap) {
     for(int i = gap - 1; i >= 0; --i) {

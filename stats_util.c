@@ -1,5 +1,7 @@
 #include "stats_util.h"
 
+const char* TABLE_TYPES[] = {"DECREASING", "INCREASING", "RANDOM"};
+
 void fillTable(int *table, int size, int (*func)(int)) {
     table[0] = rand() % 100;
     for (int i = 1; i < size; i++) {
@@ -38,6 +40,24 @@ int check(int *table, int size) {
         }
     }
     return 1;
+}
+
+int* getTableOfTypeAndSize(int type, int size) {
+    int *table = (int *) malloc(size * sizeof(int));
+    switch (type) {
+        case DECREASING:
+            fillDecreasing(table, size);
+            break;
+        case INCREASING:
+            fillIncreasing(table, size);
+            break;
+        case RANDOM:
+            fillRandom(table, size);
+            break;
+        default:
+            fillRandom(table, size);
+    }
+    return table;
 }
 
 double countTime(fptr_sorting func, int *table, int size) {
