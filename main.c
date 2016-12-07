@@ -38,11 +38,25 @@ void runWithTimeout(void* func, void* params, unsigned int time, int threadNumbe
     pthread_cancel(THREADS[threadNumber]);
 }
 
-int main(void) {
+void every() {
     for(int i = BUBBLE_SORT; i <= SHELL_SORT; i++) {
         for(int j = DECREASING; j <= RANDOM; j++) {
             runWithTimeout(sortInThread, getSortingParamsStructure(i, j, TABLE_SIZE), TIMEOUT, i*1 + j);
         }
     }
+}
+
+int main(void) {
+    //every();
+    int size = 150;
+    int *a = getTableOfTypeAndSize(RANDOM, size);
+
+    printf("Sorting type: %s\nTable type: %s,\nTime: %f\n\n\n", SORTING_TYPES[QUICK_SORT],
+           TABLE_TYPES[RANDOM], countTime(getSortingAlgorithm(QUICK_SORT_ITERATIVE), a, size));
+
+    for(int i=0; i<size; i++) {
+        printf("%d ", a[i]);
+    }
+
     return 0;
 }

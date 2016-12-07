@@ -18,7 +18,7 @@ enum TableType {
     RANDOM
 };
 
-const char* TABLE_TYPES[];
+const char* TABLE_TYPES[3];
 
 void fillRandom(int *table, int size);
 

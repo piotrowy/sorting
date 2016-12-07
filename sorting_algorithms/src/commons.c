@@ -40,7 +40,7 @@ void changeSize(Stack *stack, int newSize) {
 
 void push(Stack *stack, int elem) {
     if ((stack->position + 1) < stack->maxSize) {
-        stack->position += 1;
+        stack->position++;
         stack->table[stack->position] = elem;
     }
 }
@@ -49,16 +49,16 @@ void forcePush(Stack *stack, int elem) {
     if ((stack->position + 1) > stack->maxSize) {
         changeSize(stack, stack->maxSize + 10);
     }
-    stack->position += 1;
+    stack->position++;
     stack->table[stack->position] = elem;
 }
 
 int pop(Stack *stack) {
     if (stack->position >= 0) {
-        stack->position -= 1;
+        stack->position--;
         return stack->table[stack->position + 1];
     }
-    return stack->table[stack->maxSize];
+    return NULL;
 }
 
 int isEmpty(Stack *stack) {

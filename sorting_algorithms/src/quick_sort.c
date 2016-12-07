@@ -1,32 +1,35 @@
+#include <math.h>
 #include "../inc/quick_sort.h"
 #include "../inc/commons.h"
 
+#define true 1
+
 int getDividingPoint(int left, int right) {
-    return left + (right - left)/2;
+    return (int) floor(left + (right - left) / 2);
 }
 
 int partition(int *table, int left, int right) {
-    int dividingPoint = getDividingPoint(left, right);
-    int dividingValue = table[dividingPoint];
-
-    swap(&table[dividingPoint], &table[right]);
-    int positionIndex = left;
-    for (int i = left; i < right - 1; i ++) {
-        if (table[i] < dividingValue) {
-            swap(&table[i], &table[positionIndex]);
-            positionIndex = positionIndex + 1;
+    int dividingValue = table[getDividingPoint(left, right)];
+    while (true) {
+        while (table[right] > dividingValue)
+            right--;
+        while (table[left] < dividingValue)
+            left++;
+        if (left < right) {
+            swap(&table[left], &table[right]);
+            left++;
+            right--;
+        } else {
+            return right;
         }
     }
-    swap(&table[positionIndex], &table[right]);
-
-    return positionIndex;
 }
 
 void quickSort(int *table, int left, int right) {
     if (left < right) {
         int newIndex = partition(table, left, right);
-        partition(table, left, newIndex);
-        partition(table, newIndex + 1, right);
+        quickSort(table, left, newIndex);
+        quickSort(table, newIndex + 1, right);
     }
 }
 
