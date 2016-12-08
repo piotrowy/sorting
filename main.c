@@ -47,16 +47,16 @@ void every() {
 }
 
 int main(void) {
-    //every();
-    int size = 150;
-    int *a = getTableOfTypeAndSize(RANDOM, size);
-
-    printf("Sorting type: %s\nTable type: %s,\nTime: %f\n\n\n", SORTING_TYPES[QUICK_SORT],
-           TABLE_TYPES[RANDOM], countTime(getSortingAlgorithm(QUICK_SORT_ITERATIVE), a, size));
-
-    for(int i=0; i<size; i++) {
-        printf("%d ", a[i]);
-    }
+    every();
+//    int size = 150;
+//    int *a = getTableOfTypeAndSize(RANDOM, size);
+//
+//    printf("Sorting type: %s\nTable type: %s,\nTime: %f\n\n\n", SORTING_TYPES[QUICK_SORT],
+//           TABLE_TYPES[RANDOM], countTime(getSortingAlgorithm(QUICK_SORT_ITERATIVE), a, size));
+//
+//    for(int i=0; i<size; i++) {
+//        printf("%d ", a[i]);
+//    }
 
     return 0;
 }

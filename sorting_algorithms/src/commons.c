@@ -6,31 +6,34 @@ void swap(int *a, int *b) {
     *b = temp;
 }
 
-Stack* MyStack(int size) {
-    Stack *stack = (Stack*) malloc(sizeof(Stack));
+Stack *MyStack(int size) {
+    Stack *stack = (Stack *) malloc(sizeof(Stack));
     stack->table = (int *) malloc(size * sizeof(int));
     stack->position = -1;
     stack->maxSize = size;
     stack->push = push;
     stack->pop = pop;
     stack->isEmpty = isEmpty;
+    stack->isFull = isFull;
     return stack;
 }
 
-Stack* MyDynamicStack(int size) {
-    Stack *stack = (Stack*) malloc(sizeof(Stack));
+Stack *MyDynamicStack(int size) {
+    Stack *stack = (Stack *) malloc(sizeof(Stack));
     stack->table = (int *) malloc(size * sizeof(int));
     stack->position = -1;
     stack->maxSize = size;
     stack->push = forcePush;
     stack->pop = pop;
     stack->isEmpty = isEmpty;
+    stack->isFull = isFull;
     return stack;
 }
 
 void changeSize(Stack *stack, int newSize) {
     int *oldPointer = stack->table;
-    stack->table = realloc(stack->table, newSize * sizeof(int));
+    stack->maxSize = newSize * sizeof(int);
+    stack->table = realloc(stack->table, stack->maxSize * sizeof(int));
     if (stack->table == NULL) {
         stack->table = oldPointer;
         printf("REALLOC FAILURE!");
@@ -39,14 +42,14 @@ void changeSize(Stack *stack, int newSize) {
 }
 
 void push(Stack *stack, int elem) {
-    if ((stack->position + 1) < stack->maxSize) {
+    if (!stack->isFull(stack)) {
         stack->position++;
         stack->table[stack->position] = elem;
     }
 }
 
 void forcePush(Stack *stack, int elem) {
-    if ((stack->position + 1) > stack->maxSize) {
+    if (!stack->isFull(stack)) {
         changeSize(stack, stack->maxSize + 10);
     }
     stack->position++;
@@ -54,16 +57,17 @@ void forcePush(Stack *stack, int elem) {
 }
 
 int pop(Stack *stack) {
-    if (stack->position >= 0) {
+    if (!stack->isEmpty(stack)) {
         stack->position--;
         return stack->table[stack->position + 1];
     }
-    return NULL;
+    exit(139);
 }
 
 int isEmpty(Stack *stack) {
-    if (stack->position == -1) {
-        return 1;
-    }
-    return 0;
+    return stack->position < 0;
+}
+
+int isFull(Stack *stack) {
+    return stack->position == stack->maxSize - 1;
 }

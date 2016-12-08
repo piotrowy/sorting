@@ -13,6 +13,7 @@ typedef struct Stack{
     void (*push)(struct Stack *self, int elem);
     int (*pop)(struct Stack *self);
     int (*isEmpty)(struct Stack *self);
+    int (*isFull)(struct Stack *self);
     int (*changeSize)(struct Stack *self, int newSize);
 } Stack;
 
@@ -29,5 +30,7 @@ void forcePush(Stack *stack, int elem);
 int pop(Stack *stack);
 
 int isEmpty(Stack *stack);
+
+int isFull(Stack *stack);
 
 #endif //PIOTROWY_SORTING_COMMONS_H
