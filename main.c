@@ -4,6 +4,7 @@
 #include "sorting_algorithms/inc/sorting.h"
 #define TIMEOUT 1
 #define TABLE_SIZE 10000
+#define NUMBER_OF_TABLE_TYPES 3
 
 pthread_t THREADS[27];
 
@@ -41,7 +42,7 @@ void runWithTimeout(void* func, void* params, unsigned int time, int threadNumbe
 void every() {
     for(int i = BUBBLE_SORT; i <= SHELL_SORT; i++) {
         for(int j = DECREASING; j <= RANDOM; j++) {
-            runWithTimeout(sortInThread, getSortingParamsStructure(i, j, TABLE_SIZE), TIMEOUT, i*1 + j);
+            runWithTimeout(sortInThread, getSortingParamsStructure(i, j, TABLE_SIZE), TIMEOUT, i*NUMBER_OF_TABLE_TYPES + j);
         }
     }
 }
