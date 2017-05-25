@@ -28,4 +28,4 @@ Possible ways (it means provided by author or already existing tool):
 * CMake - yes, there are already defined files. 
 
 #Extras
-Program has setting timeouts on algorithms execution implemented.
+Program has setting timeouts implemented on algorithms execution implemented.
