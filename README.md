@@ -14,7 +14,7 @@ You can use this project by seeing implementations of various sorting algorithms
 * BubbleSort
 * ShellSort
 
-Iterative quick sort contains dummy stack implementation. It is needed and I want only show how iterative quick sort works, not a stack. Stack is not resistant to overflowing integer.
+Iterative quick sort contains dummy stack implementation. It is needed to implement this algorithm and I wanted to show how iterative quick sort works, not a stack. This stack implementation is not resistant to overflowing integer.
 
 #How to use?
 * in main.c file I defined two functions which map enums to functions. It allows to easy configure main function and what you want to measure.
