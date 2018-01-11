@@ -1,9 +1,9 @@
-# PiotrowySorting
+# Sorting
 Sorting project serves to make measurements of different sorting algorithms. It contains library which contains various, common sorting algorithms.
 
 You can use this project by seeing implementations of various sorting algorithms and by making measurements of time of executing such algorithm.
 
-#Algorithms
+# Algorithms
 * HeapSort (in progress)
 * QuickSort
 * QuickSort Iterative
@@ -16,16 +16,16 @@ You can use this project by seeing implementations of various sorting algorithms
 
 Iterative quick sort contains dummy stack implementation. It is needed to implement this algorithm and I wanted to show how iterative quick sort works, not a stack. This stack implementation is not resistant to overflowing integer.
 
-#How to use?
+# How to use?
 * in main.c file I defined two functions which map enums to functions. It allows to easy configure main function and what you want to measure.
 * sorting_algorithms directory contains only implementations of sorting algorithms and other functions (like swap) which were necessary to implement sorting. It contains also enum with all implemented algorithms names.
 * stats_utils.h is an interface which provides functions to fill arrays with values (there are 3 modes: RANDOM, INCREASING and DECREASING), to check if array is sorted and to measure time of sorting.
 * using function runWithTimeout you can set timeout on executing any algorithm.
 
-#Build
+# Build
 Possible ways (it means provided by author or already existing tool):
 * Preferable way - use Clion it's the best.
 * CMake - yes, there are already defined files. 
 
-#Extras
+# Extras
 Program has setting timeouts implemented on algorithms execution implemented.
